@@ -50,6 +50,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 * The ESP32 is a 32 bit processor that includes FP support; this code reflects that fact.
 */
 
+#ifdef ESP32
+
 #include "ESP32_Servo.h"
 #include "esp32-hal-ledc.h"
 #include "Arduino.h"
@@ -264,4 +266,4 @@ int Servo::ticksToUs(int ticks)
     return (int)((float)ticks * ((float)REFRESH_USEC / (float)this->timer_width_ticks)); 
 }
 
- 
+#endif // ESP32

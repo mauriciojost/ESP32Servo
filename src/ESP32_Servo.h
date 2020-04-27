@@ -65,6 +65,8 @@
 #ifndef ESP32_Servo_h
 #define ESP32_Servo_h
 
+#ifdef ESP32
+
 // Values for TowerPro MG995 large servos (and many other hobbyist servos)
 #define DEFAULT_uS_LOW 1000        // 1000us
 #define DEFAULT_uS_HIGH 2000      // 2000us
@@ -141,4 +143,7 @@ public:
    int ticks = DEFAULT_PULSE_WIDTH_TICKS;             // current pulse width on this channel
    int timer_width_ticks = DEFAULT_TIMER_WIDTH_TICKS; // no. of ticks at rollover; varies with width
 };
+
+#endif // ESP32
+
 #endif
